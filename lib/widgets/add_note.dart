@@ -11,8 +11,10 @@ class _AddNoteState extends State<AddNote> {
   String newTask = "";
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       color: Color(0xff757575),
+     // color: theme.scaffoldBackgroundColor,
       child: Container(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -27,7 +29,8 @@ class _AddNoteState extends State<AddNote> {
                 decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
-                          color: Colors.cyan, width: 3.0),
+                          color: theme.primaryColor,
+                          width: 3.0),
                     ),
                     labelText: "Add your task"
                 ),
@@ -35,7 +38,7 @@ class _AddNoteState extends State<AddNote> {
                 textAlign: TextAlign.center,
                 showCursor: true,
                 enableSuggestions: true,
-                cursorColor: Colors.cyan,
+                cursorColor: theme.primaryColor,
                 textCapitalization: TextCapitalization.sentences,
                 cursorHeight: 30,
                 style: TextStyle(fontSize: 20),
@@ -44,7 +47,7 @@ class _AddNoteState extends State<AddNote> {
                 height: 20,
               ),
               Card(
-                color: Colors.blue,
+                color: theme.primaryColor,
                 child: TextButton(
                   onPressed: () {
                     Provider.of<NotesData>(context,listen: false).add(newTask);

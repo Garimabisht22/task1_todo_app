@@ -14,6 +14,7 @@ class _TasksListWidgetState extends State<TasksListWidget> {
   bool isChanged = false;
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
 
     //final Notes = Provider.of<NotesData>(context).getNotesList()[widget.index];
 
@@ -21,6 +22,7 @@ class _TasksListWidgetState extends State<TasksListWidget> {
       return Padding(
         padding: const EdgeInsets.all(8.0),
         child: Card(
+          color: theme.backgroundColor,
           shadowColor: Colors.black,
           elevation: 2,
           child: Padding(
@@ -39,12 +41,13 @@ class _TasksListWidgetState extends State<TasksListWidget> {
                       isChanged = value!;
                     });
                   },
-                  activeColor: Colors.white,
+                  activeColor: theme.backgroundColor,
                 ),
                 SizedBox(
                   width: 10,
                 ),
                 Text(data.getNotesList()[widget.index], style: TextStyle(
+                  color: theme.accentColor,
                     fontWeight: FontWeight.w500,
                     fontSize: 15,
                     decoration: isChanged
