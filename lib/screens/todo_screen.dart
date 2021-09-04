@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:to_do/screens/search_screen.dart';
 import 'package:to_do/widgets/add_note.dart';
 import 'package:to_do/modules/notes_data.dart';
 import 'package:to_do/widgets/dismissible_widget.dart';
@@ -75,7 +76,9 @@ class _TodoScreenState extends State<TodoScreen> {
                         Expanded(child: SizedBox()),
                         GestureDetector(
                           onTap: () {
-
+                            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
+                              return SearchScreen(noteList: Provider.of<NotesData>(context).getNotesList(),);
+                            }));
                           },
                           child: Icon(
                             Icons.search,

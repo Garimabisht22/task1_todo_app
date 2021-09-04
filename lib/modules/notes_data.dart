@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 class NotesData extends ChangeNotifier{
 
   List<String> _notesList = [
+    "Welcome to ToDo",
     "Pickup Friend",
     "DEMO DATA"
   ];
