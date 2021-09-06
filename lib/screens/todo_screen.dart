@@ -77,7 +77,7 @@ class _TodoScreenState extends State<TodoScreen> {
                         GestureDetector(
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                              return SearchScreen(noteList: Provider.of<NotesData>(context).getNotesList(),);
+                              return SearchScreen(Notes:  Provider.of<NotesData>(context).getNotesList(),);
                             }));
                           },
                           child: Icon(
